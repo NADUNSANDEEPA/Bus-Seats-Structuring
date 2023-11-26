@@ -1,70 +1,78 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Bus Seats Structuring
 
-## Available Scripts
+This is a fully open-source package that allows for easy importing of bus seat structures into your project. The primary purpose of developing this package is to assist university students in their academic projects.
 
-In the project directory, you can run:
+## Authors
 
-### `npm start`
+- [@nadun_sandeepa](https://www.linkedin.com/in/nadun-sandeepa-62aba9194/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To install this package into a React project, you can use npm
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+  npm install bus-seat-structuring@latest --force
+```
+    
+## Usage/Examples
 
-### `npm run build`
+Upon importing the package, you can utilize the structure by using the **<Seat busmodel={''} bookedSeatsList={[]} booked_seats={booked_seats}/>** tag.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+import React from 'react';
+import { Seat } from 'bus-seat-structuring'; 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+function App() {
+  
+  function booked_seats(clickedSeats){
+    alert(clickedSeats);
+  }
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  return (
+    <div className="App">
+      <Seat 
+            busmodel={'layland_seats_49'}
+            bookedSeatsList={[]}
+            booked_seats={booked_seats}
+            />
+    </div>
+  );
+}
+```
 
-### `npm run eject`
+- **bookedSeatsList** - The list of booked seats. (Example : ['1-2', '3-4', '5-6'])
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **booked_seats** - When seats are booked, the updated information will be displayed.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **busmodel** - Busmodel refers to the structure of the bus you desire. The list of available bus structures and their respective codes are as follows:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Supported Bus Models
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Bus Model             | Code                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Ashok Layland seats 49 | layland_seats_49 |
+| Ashok Layland seats 54 | layland_seats_54 |
+| Volvo 9100 | volvo_9100 |
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Screenshots
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Before Bookings.**
+![App Screenshot](https://i.imgur.com/vWuXe2Z.png)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+**After bookings.**
+The seats that are already reserved will be displayed in red. When a user clicks on a seat, it will change to a yellow color to indicate that it has been selected or clicked.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![App Screenshot](https://i.imgur.com/impwyFg.png)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Support
 
-### Advanced Configuration
+For support, 
+- email nadun2952@gmail.com
+- LinkedIn : https://www.linkedin.com/in/nadun-sandeepa-62aba9194/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

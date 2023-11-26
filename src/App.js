@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Seat } from 'bus-seat-structuring'; 
 
 function App() {
+  
+  function booked_seats(clickedSeats){
+    alert(clickedSeats);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Seat 
+            busmodel={'layland_seats_49'}
+            bookedSeatsList={['0-1','3-2']}
+            booked_seats={booked_seats}
+            />
     </div>
   );
 }
